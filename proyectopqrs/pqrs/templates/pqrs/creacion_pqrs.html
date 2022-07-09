@@ -1,0 +1,58 @@
+{% extends 'inicio/base.html' %} 
+{% load static %} 
+{% block content %}
+
+
+
+
+<form method="POST" action="{% url 'pqrs' %}">
+  {% csrf_token %}
+  
+<div class="titulo-solicitud">
+  <h3>SOLICITUD PQR</h3>
+</div> 
+  
+  
+  
+<div class="form-pqr">
+
+  <div class="form-letter">
+    <label for="diseño" class="tittle">Tipo De Solicitud:</label>
+                    
+      <select class="form-control" id="exampleFormControlSelect1" name="tipo_solicitud" >
+        <option value="P" name="tipo_solicitud">PREGUNTA</option>
+        <option value="Q" name="tipo_solicitud">QUEJA</option>
+        <option value="R" name="tipo_solicitud">RECLAMO</option>
+        <option value="S" name="tipo_solicitud">SUGERENCIA</option>
+      </select>        
+
+      <div class="form-letter">
+        <label class="tittle" for="cedula">Cédula:</label>
+        <input type="number" class="form-control" placeholder="cedula" name="cedula">
+      </div>
+
+      <div class="form-letter">
+        <label class="tittle" for="asunto">Asunto:</label>
+        <input type="text" class="form-control" placeholder="asunto" name="asunto">
+      </div>
+
+
+      <div class="form-letter">
+        <label class="tittle" for="comentario">Comentario:</label>
+        <textarea class="form-control" placeholder="comentario" name="comentario"></textarea>
+      </div>
+        
+      <input class="boton-pqr" type="submit" name="submit"  value="Enviar">
+      
+  </div>
+</div>
+</form>
+
+{% if error %}
+
+<div class="alert alert-danger">
+    <p>{{error}}</p>
+</div>
+
+{% endif %}
+{% endblock %}

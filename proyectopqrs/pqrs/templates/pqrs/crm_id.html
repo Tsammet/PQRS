@@ -1,0 +1,89 @@
+{% extends 'inicio/base2.html' %} 
+{% load static %}
+
+{% block content %}
+
+
+
+  <form method="POST" action="{% url 'crm_id' crm.id %}">
+  {% csrf_token %}
+          
+
+<div class="botones-crm">
+
+    <button type="submit" id="editar" name="submit" value="editar">Editar Tratamiento</button>
+    <button type="submit" id="eliminar" name="submit" value="eliminar">Eliminar</button>
+    <button type="sumbmit" id="guardar" name="submit" value="guardar">Guardar Cambios</button>
+   
+    {% if crm.estado_pqrs == "ABIERTO" %}
+      <button type="sumbmit"  name="submit" value="atender">Atender</button>
+    {% endif %}
+
+    {% if crm.estado_pqrs == "PROGRESO" %}
+      <button type="sumbmit"  name="submit" value="devolver">Devolver</button>
+      <button type="sumbmit"  name="submit" value="cerrar">Cerrar</button>
+    {% endif %}
+    
+    {% if crm.estado_pqrs == "CERRADO" %}
+      <button type="sumbmit"  name="submit" value="reabrir">Reabrir</button>
+      <button type="sumbmit"  name="submit" value="notificar">Notificar</button>
+    {% endif %}
+
+  </div>
+   
+
+
+<div class="crm-id">
+
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="nombres">Nombres:</label>
+    <input type="text" class="form-control" placeholder="Nombres" name="nombres" value= "{{ crm.usuario.nombres }}" readonly>
+  </div>
+    
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="apellidos">Apellidos:</label>
+    <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" value= "{{ crm.usuario.apellidos }}" readonly>
+  </div>
+        
+  <div class="form-letter-crm">
+    <label  class="nombre-crm" for="cedula">Cédula:</label>
+    <input type="text" class="form-control" placeholder="Cedula" name="cedula" value= "{{ crm.usuario.cc }}" readonly>
+  </div>
+    
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="correo">Email:</label>
+    <input type="text" class="form-control" placeholder="Correo" name="correo" value="{{ crm.usuario.correo }}" readonly>
+  </div>
+    
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="tipo_cliente" style ="margin-top:20px">Tipo De Cliente:</label>
+    <input type="text" class="form-control" placeholder="Tipo De Cliente" name="tipo_cliente" value="{{ crm.usuario.tipo_cliente }}"readonly>
+  </div>
+      
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="tipo_solicitud" style ="margin-top:20px">Tipo De Solicitud:</label>
+    <input type="text" class="form-control" placeholder="Tipo De Solicitud" name="tipo_solicitud" value="{{ crm.tipo_solicitud }}"readonly>
+  </div>
+    
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="asunto">Asunto:</label>
+    <input type="text" class="form-control" placeholder="Asunto" name="asunto" value="{{ crm.asunto }}"readonly>
+  </div>
+    
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="comentario">Comentario:</label>
+    <input class="form-control" placeholder="comentario" name="comentario" value="{{ crm.comentario }}" readonly style="margin-bottom:25px"></textarea>
+  </div>
+
+  <div class="form-letter-crm">
+    <label class="nombre-crm" for="tratamiento">Tratamiento:</label>
+    <input class="form-control" placeholder="tratamiento" name="tratamiento" value="{{ crm.tratamiento }}"  {% if not crm.estado_pqrs == "PROGRESO" %} readonly  {% endif %} {% if editando is False %} readonly {% endif %}></textarea>
+  </div>
+   
+    
+     
+  </form>
+</div>
+     
+
+{% endblock %}

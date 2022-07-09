@@ -1,0 +1,46 @@
+{% extends 'inicio/base2.html' %} 
+{% load static %} 
+{% block content %}
+
+
+
+<form method="POST" enctype="multipart/form-data" action="{% url 'registro_piano' %}" >
+    {% csrf_token %}
+    <div class="titulo-registro-piano">  
+      <H4>Registro Piano</H2>
+    </div>
+
+    <div class="ingreso-piano">
+
+        <p>INGRESA UN PIANO QUE QUIERAS MOSTRAR</p>
+
+        <div class="form-letter-npiano">
+          <label class="title" for="nombres">Referencia Piano:</label>
+          <input type="text" class="form-control" placeholder="Ref" name="referencia_piano">
+        </div>
+
+        <div class="form-letter-npiano">
+          <label class="title" for="apellidos">PRECIO:</label>
+          <input type="number" class="form-control" placeholder="precio" name="precio">
+        </div>
+
+        <div class="form-letter-npiano">
+          <label class="title" for="cedula">Contenido:</label>
+          <input type="text" class="form-control" placeholder="contenido" name="contenido">
+        </div>
+
+        <div class="imagen-np">
+            <label class="imagen-np"> Imagen</label>
+            <input type="file" name="imagen">
+        </div>
+
+       
+        <input class="registrar" type="submit" name="submit"  value="submit">
+      
+    </div>
+
+</form>
+
+
+
+{% endblock %}

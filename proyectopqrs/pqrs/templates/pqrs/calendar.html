@@ -1,0 +1,57 @@
+{% extends 'inicio/base.html' %} 
+{% load static %}
+{% block content %} 
+
+
+
+<form method="POST" action="{% url 'agendar' %}">
+  {% csrf_token %}
+
+<div class="titulo-cita"> 
+  <h3>AGENDA CITA</h3>
+</div>
+
+<div class="form-calendario">
+
+    
+        <div class="form-letter">
+          <label class="tittle" for="cedula">Cédula:</label>
+          <input type="number" class="form-control" placeholder="cedula" name="cedula">
+        </div>
+
+        <div class="form-letter">
+          <label class="tittle" for="asunto_cita">Asunto De La Cita:</label>
+          <input type="text" class="form-control" placeholder="asunto cita" name="asunto_cita">
+        </div>
+
+        <div class="form-letter">
+          <label class="tittle" for="asunto">Fecha inicio:</label>
+          <input type="datetime-local" class="form-control" placeholder="Hora Inicio" name="fecha_inicio">
+        </div>
+
+        <div class="form-letter">
+            <label class="tittle" for="asunto">Fecha Salida:</label>
+            <input type="datetime-local" class="form-control" placeholder="Hora Inicio" name="fecha_salida">
+        </div>
+
+        <input class="boton" type="submit" name="submit"  value="Enviar">
+
+  </form>
+</div>
+
+{% if valida %}
+
+<div class="alert alert-danger">
+    <p>{{valida}}</p>
+</div>
+
+{% endif %}
+
+{% if error %}
+
+<div class="alert alert-danger">
+    <p>{{error}}</p>
+</div>
+
+{% endif %}
+{% endblock %}

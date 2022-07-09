@@ -1,0 +1,77 @@
+{% extends 'inicio/base2.html' %} 
+{% load static %}
+{% block content %} 
+
+
+<div class="titulo-crm">
+<h1>TABLA CRM</h1>
+</div>
+
+<form method="POST" action="{% url 'crm' %}">
+  {% csrf_token %}
+
+<div class="botones"> 
+  <div class="btn-group dropright">
+
+    <button type="button" class="btn btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPCIONES</button>
+
+    <div class="dropdown-menu" x-placement="right-start">
+      <button class="dpbt" type="submit" id="editar" name="submit" value="todas">Todas pqrs</button>
+      <button class="dpbt" type="submit" id="editar" name="submit" value="abiertas">Abiertas</button>
+      <button class="dpbt" type="submit" id="editar" name="submit" value="P">P</button>
+      <button class="dpbt" type="submit" id="editar" name="submit" value="Q">Q</button>
+      <button class="dpbt" type="submit" id="editar" name="submit" value="R">R</button>
+      <button class="dpbt" type="submit" id="editar" name="submit" value="S">S</button>
+    </div>
+  </div>
+</div>
+
+<div class="tablas">
+  <table class="table table-hover">
+    <thead class="tabla-cabeza">
+      <tr>
+        <th scope="col">Pqr_Id</th>
+        <th scope="col">Cédula</th>
+        <th scope="col">Tipo Cliente</th>
+        <th scope="col">Tipo Solicitud</th>
+        <th scope="col">Fecha Solicitud</th>
+        <th scope="col">Estado PQRS</th>
+      </tr>
+    </thead>
+        
+    <tbody class="tabla-cuerpo"> 
+
+    {% for crm in tabla_crm %}
+                  
+    <tr onclick="window.location='/crm_id/{{ crm.id }}'" style="cursor: pointer">
+      <td>{{crm.id}}</td>
+      <td>{{crm.usuario.cc}}</td>
+      <td>{{crm.usuario.tipo_cliente}}</td>
+      <td>{{crm.tipo_solicitud}}</td>
+      <td>{{crm.fecha_solicitud}}</td>
+      <td>{{crm.estado_pqrs}}</td>
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+
+
+<div class="pasar-paginas">
+
+  <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          {% if tabla_crm.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ tabla_crm.previous_page_number }} ">Previous</a></li>
+          {% endif %}
+
+          {% if tabla_crm.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ tabla_crm.next_page_number }} ">Next</a></li>
+          {% endif %}
+      </ul>
+  </nav>
+  
+</form>
+{% endblock %}

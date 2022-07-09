@@ -1,0 +1,60 @@
+{% extends 'inicio/base2.html' %} 
+{% load static %} 
+{% block content %}
+
+
+
+<form method="POST" action="{% url 'registro' %}">
+  {% csrf_token %}
+
+<div class="titulo-registroc">
+  <H2>Registro Cliente</H2>
+</div>  
+
+<div class="form-registroc">
+        <div class="form-letter-r">
+          <label class="title" for="nombres">Nombres:</label>
+          <input type="text" class="form-control" placeholder="nombres" name="nombres">
+        </div>
+
+        <div class="form-letter-r">
+          <label class="title" for="apellidos">Apellidos:</label>
+          <input type="text" class="form-control" placeholder="apellidos" name="apellidos">
+        </div>
+
+        <div class="form-letter-r">
+          <label class="title" for="cedula">Cédula:</label>
+          <input type="number" class="form-control" placeholder="cedula" name="cedula">
+        </div>
+
+        <div class="form-letter-r">
+          <label class="title" for="correo">Email:</label>
+          <input type="email" class="form-control" placeholder="correo" name="correo">
+        </div>
+
+        <div class="form-letter-r">
+            <label class="title" for="diseño">Tipo De Cliente:</label>
+            
+            <br>
+            
+            <select name="tipo_cliente" class="cliente">
+                <option value="A" name="tipo_cliente">A</option>
+                <option value="B" name="tipo_cliente">B</option>
+                <option value="C" name="tipo_cliente">C</option>
+            </select>
+        </div>
+        
+        <input class="boton-ingreso" type="submit" name="submit"  value="submit">
+      
+</div>
+      
+</form>
+{% if error %}
+
+<div class="alert alert-danger">
+    <p>{{error}}</p>
+</div>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'inicio/base2.html' %} 
+{% load static %}
+
+{% block content %} 
+
+
+
+<form method="POST" action="{% url 'cliente_pqr' user.id %}">
+{% csrf_token %}
+
+<div class ="tabla-clientep">
+  {% for u in usser %}
+
+    <div class="card-pqr">
+      <div class="card-body">
+        <p class="card-title">NOMBRES:</p>
+        <p class="card-text">{{u.nombres}}</p>
+        <p class="card-title">APELLIDOS:</p>
+        <p class="card-text">{{u.apellidos}}</p>
+        <p class="card-title">CC:</p>
+        <p class="card-text">{{u.cc}}</p>
+        <p class="card-title">EMAIL:</p>
+        <p class="card-text">{{u.correo}}</p>
+        <p class="card-title">TIPO CLIENTE:</p>
+        <p class="card-text">{{u.tipo_cliente}}</p>
+      </div>
+    </div>
+        
+  {% endfor %}
+</div>
+
+
+<div class = "titulo-cliente">      
+  <h2> PQRS </h2>
+</div>
+
+
+
+<div class="tablas">
+  <table class="table table-hover">
+    <thead class="tabla-cabeza">
+      <tr>
+        <th scope="col">Pqr_Id</th>
+        <th scope="col">Tipo Solicitud</th>
+        <th scope="col">Asunto</th>
+        <th scope="col">Fecha Solicitud</th>
+        <th scope="col">Estado Pqrs</th>
+      </tr>
+    </thead>
+    
+    
+    
+    <tbody class="tabla-cuerpo"> 
+        
+    {% for p in pqr %}
+    
+        <td>{{p.id}}</td>
+        <td>{{p.tipo_solicitud}}</td>
+        <td>{{p.asunto}}</td>
+        <td>{{p.fecha_solicitud}}</td>
+        <td>{{p.estado_pqrs}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</form>
+{% endblock %}

@@ -1,0 +1,90 @@
+<div class="inicio_cliente">
+{% extends 'inicio/base.html' %} 
+{% load static %} 
+
+{% block content %}
+
+<form method="POST" >
+      
+{% csrf_token %}
+
+
+<div class="titulo-inicioc">
+    <h2>NUESTROS PIANOS</h2>
+</div>
+
+
+
+<div class="buscar-piano">
+
+    <div class="form-outline">
+        <input type="search" id="form1" class="form-control" placeholder="Buscar" name="buscar"/>
+    </div>
+
+    <button type="submit" class="btn btn">
+        <i class="fas fa-search"></i>
+    </button>
+    
+</div>
+
+
+<div class="n-p">
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+        {% if pianos.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ pianos.previous_page_number }} ">Previous</a></li>
+        {% endif %}
+
+        
+        {% if pianos.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ pianos.next_page_number }} ">Next</a></li>
+        {% endif %}
+        </ul>
+    </nav>
+</div>   
+
+
+
+<div class="row">
+
+{% for p in pianos %}
+
+    <div class="col-lg-6 col-md-12">
+        <div class="card-p">
+            <img class="card-img-top" src="{{p.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.referencia_piano}}</h5>
+                    <br>
+                    <h5 class="card-title">PRECIO:</h5>
+                    <p class="card-text">$ {{p.precio}}</p>
+                    <h5 class="card-title">INFORMACIÓN</h5>
+                    <p class="card-text">{{p.contenido}}</p>
+                </div>
+        </div>
+    </div>
+
+
+
+{% endfor %}
+</div>
+
+
+<div class="n-p">
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+        {% if pianos.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ pianos.previous_page_number }} ">Previous</a></li>
+        {% endif %}
+
+        
+        {% if pianos.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ pianos.next_page_number }} ">Next</a></li>
+        {% endif %}
+        </ul>
+    </nav>
+</div>   
+
+{% endblock %}
+</div>

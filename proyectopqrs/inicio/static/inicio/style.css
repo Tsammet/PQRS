@@ -1,0 +1,557 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.navbar{
+    height: 80px;
+    background:black;
+}
+
+.text-link{
+    color: white;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.text-link:hover{
+    color: rgb(72, 11, 11);
+
+}
+
+.text-link:active{
+    color: rgb(72, 11, 11);
+}
+
+.titulo-inicioc{
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 2%;
+    padding-left: 35%;
+}
+
+.buscar-piano{
+    width: 17%;
+    margin-left: 35%;
+}
+
+.buscar-piano button{
+    background-color: black;
+    color: white;
+    margin-top: 15px;
+    margin-left: 40%;
+}
+
+.card-p{
+    margin-top: 5%;
+    margin-left: 10%;
+    border: solid;
+    overflow: auto;
+    width: 400px;
+    height: 500px;
+    
+}
+
+
+.card-p::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 5px;
+}
+
+.card-p::-webkit-scrollbar-thumb{
+    background: rgb(18, 1, 14);
+    border-radius: 5px;
+}
+
+.card-title{
+    color: black;
+    font-family: serif;
+    text-decoration: underline;
+    text-align: center;
+    color: rgb(72, 11, 11);
+}
+
+.card-text{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.page-link{
+    background-color: black;
+    color: white;
+    margin-top: 25px;
+    margin-left: 650px;
+    border-radius: 15px;
+}
+
+
+.titulo-cita{
+    color: rgb(0, 0, 0);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 2%;
+    padding-left: 45%;
+}
+
+
+.form-calendario{
+    width: 550px;
+    height: 500px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 35%;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: solid;
+}
+
+.form-letter{
+    color:  rgb(0, 0, 0) ;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-letter .tittle{
+    text-decoration: underline;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 120%;
+    margin-bottom: 15px;
+}
+
+.form-calendario .form-control{
+    width: 75%;
+    margin-left: 12%;
+}
+
+.form-calendario .boton{
+    background-color: black;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-left: 45%;
+}
+
+.form-calendario .boton:hover{
+    color:rgb(72, 11, 11);
+    background-color: white;
+    
+}
+
+.form-calendario .boton:active{
+    color:rgb(72, 11, 11);
+    background-color: white;
+}
+
+.historia-piano{
+    margin-top: 25px;
+    margin-left: 50px;
+    width: 350px;
+    height: 500px;
+    overflow: auto;
+    border: solid;
+}
+
+
+.historia-piano::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 5px;
+}
+
+.historia-piano::-webkit-scrollbar-thumb{
+    background: rgb(18, 1, 14);
+    border-radius: 5px;
+}
+
+.historia-piano h2{
+    text-align: center;
+    text-decoration: underline;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rgb(72, 11, 11);
+}
+    
+.historia-piano p{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.imagen-piano img{
+    width: 550px;
+    height: 550px;
+    margin-left: 25%;
+}
+
+.titulo-solicitud{
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.form-pqr{
+    border: solid;
+    width: 500px;
+    height: 500px;
+    margin-top: 5%;
+    margin-left: 35%;    
+    margin-bottom: 5px;
+}
+
+.form-pqr .form-control{
+    color:black;
+    width: 75%;
+    margin-left: 13%;
+}
+
+.form-pqr .boton-pqr{
+    background-color: black;
+    color: white;
+    width: 80px;
+    height: 35px;
+    margin-top: 5%;
+    border-radius: 15px;
+}
+
+.form-pqr .boton-pqr:hover{
+    color:rgb(72, 11, 11);
+    background-color: white;
+    
+}
+
+.form-pqr .boton-pqr:active{
+    color:rgb(72, 11, 11);
+    background-color: white;
+}
+
+.form-login{
+    padding-top: 15px;
+    padding-left: 25px;
+    margin-top: 5%;
+    margin-left: 20%;
+    border: solid;
+    width: 350;
+    height: 450;
+    color: white;
+
+}
+
+
+.fondo_login{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: url(../imagenes/FONDO.jpg);
+    background-size: 100% 100%;
+}
+
+.form-login h4{
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 5px;
+}
+
+.form-group-login input{
+    width: 75%;
+    margin-left: 35px;    
+    margin-top: 15%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.buttons-login{
+    background-color: black;
+    color: white;
+    width: 80px;
+    height: 35px;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-left: 38%;
+}
+
+.buttons-login:hover{
+    color:rgb(72, 11, 11);
+    background-color: white;
+    
+}
+
+.buttons-login:active{
+    color:rgb(72, 11, 11);
+    background-color: white;
+}
+
+.inicio-admin{
+    width: 13%;
+    height: 91vh;
+    background-color: black;
+    padding-top: 25px;
+    padding-left: 20px;
+}
+
+.link-inicio{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+
+.link-inicio:hover{
+    color:rgb(72, 11, 11);
+    
+}
+
+.link-inicio:active{
+    color:rgb(72, 11, 11);
+}
+
+.titulo-registro-piano{
+    padding-top: 25px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+
+.ingreso-piano{
+    border: solid;
+    width: 500px;
+    height: 500px;
+    margin-left: 35%;
+    margin-top: 5%;
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ingreso-piano .form-letter-npiano{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 5px;
+}
+
+.form-letter-npiano .title{
+    text-decoration: underline;
+    color:black;
+    margin-bottom: 10px;
+}
+
+.form-letter-npiano .form-control{
+    width: 75%;
+    margin-left: 55px;
+}
+
+.ingreso-piano .imagen-np{
+    padding-top: 25px;
+    margin-left: 25px;
+    color: rgb(72, 11, 11);
+    border-radius: 15px;
+
+}
+
+.ingreso-piano .registrar{
+    background-color: black;
+    color: white;
+    width:  80px;
+    height: 40px;
+    border-radius: 15px;
+    margin-top: 15px;
+    margin-left: 42%;
+}
+
+.ingreso-piano p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo-registroc{
+    margin-top: 25px;
+    text-decoration: underline;
+    margin-left: 40%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.form-registroc{
+    border: solid;
+    width: 30vw;
+    height: 70vh;
+    margin-left: 30%;
+    margin-top: 2%;
+}
+
+.form-letter-r{
+    color:  rgb(0, 0, 0) ;
+    text-align: center;
+    margin-top: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.form-letter-r .title{
+    text-decoration: underline;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 120%;
+    margin-bottom: 15px;
+}
+
+.form-letter-r input{
+    width: 75%;
+    margin-left: 12%;    
+    margin-right: 15px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}   
+
+.boton-ingreso{
+    background-color: black;
+    color: white;
+    width: 70px;
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 43%;
+    margin-top: 15px;
+}
+
+
+.boton-ingreso:hover{
+    color:rgb(72, 11, 11);
+    background-color: white;
+    
+}
+
+.boton-ingreso:active{
+    color:rgb(72, 11, 11);
+    background-color: white;
+}
+
+.titulo-crm{
+    margin-top: 25px;
+    text-decoration: underline;
+    margin-left: 40%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.botones{
+    margin-left: 43%;
+    margin-top: 2%;
+}
+
+.botones button{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+
+.botones .dpbt{
+    width: 80px;
+    margin-top: 5px;
+    margin-left: 25%;
+}
+
+.tablas{
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.tablas .tabla-cabeza{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-bottom: solid 3px rgb(72, 11, 11);
+}
+
+.tablas .tabla-cuerpo{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo-cliente{
+    margin-top: 25px;
+    margin-left: 45%;
+    text-decoration: underline;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.buscar-cliente{
+    width: 17%;
+    margin-left: 36%;
+    margin-top: 2%;
+}
+
+.buscar-cliente button{
+    background: black;
+    color: white;
+    margin-top: 25px;
+    margin-left: 45%;
+    width: 50px;
+    height: 35px;
+    margin-bottom: 2%;
+}
+
+.botones-crm{
+    padding-top: 25px;
+    padding-left: 35%;
+}
+
+.botones-crm button{
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.botones-crm button:hover{
+    color:rgb(72, 11, 11);
+    background-color: white;
+}
+
+.botones-crm button:active{
+    color:rgb(72, 11, 11);
+    background-color: white;
+}
+
+.crm-id{
+    border: solid;
+    width: 800px;
+    height: 100%;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 25px;
+}
+
+.crm-id .form-letter-crm{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 120%;
+    margin-bottom: 15px;
+}
+
+.form-letter-crm .nombre-crm{
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.form-letter-crm input{
+    width: 75%;
+    margin-left: 10%;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.card-pqr{
+    border: solid;
+    width: 300px;
+    height: 400px;
+    margin-top: 2%;
+    margin-left: 38%;    
+}
+
+.card-pqr .card-title{
+    color:rgb(72, 11, 11);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
